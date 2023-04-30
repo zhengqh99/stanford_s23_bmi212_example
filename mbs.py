@@ -26,6 +26,14 @@ def mandelbrot(h, w, x=-0.5, y=0, z=1, mi=100):
         t[div] = i
         m[np.abs(z) > 2] = False
     return t
+
+try:
+ a1 = sys.argv[1]
+ a2 = sys.argv[2]
+except* IndexError:
+ print('you need args')
+ sys.exit(1)
+
 plt.imsave('out.jpg', mandelbrot(int(sys.argv[1]), int(sys.argv[2])), cmap='magma')
 m = mahotas.imread('out.jpg')
 pylab.imshow(m)
