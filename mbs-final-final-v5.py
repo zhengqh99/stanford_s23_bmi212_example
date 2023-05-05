@@ -9,6 +9,20 @@ import sys
 import matplotlib.pyplot as plt
 
 def mandelbrot(h, w, x=-0.5, y=0, z=1, mi=100):
+    """
+    Generate a Mandelbrot set image of the specified size.
+
+    Parameters:
+    h (int): The height of the output image in pixels.
+    w (int): The width of the output image in pixels.
+    x (float, optional): The horizontal coordinate of the center of the image. Default is -0.5.
+    y (float, optional): The vertical coordinate of the center of the image. Default is 0.
+    z (float, optional): The zoom level. A value of 1 represents no zoom. Default is 1.
+    mi (int, optional): The maximum number of iterations for each pixel. Default is 100.
+
+    Returns:
+    numpy.ndarray: A 2D array of integers representing the Mandelbrot set image.
+    """
     xw = 1.5
     yh = 1.5*h/w
     x_from = x - xw/z
